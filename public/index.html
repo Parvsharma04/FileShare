@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileShare - Easy File Sharing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        /* Navbar Styles */
+        .navbar {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #bb86fc;
+        }
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        .navbar ul li {
+            margin-left: 1rem;
+        }
+        .navbar a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #bb86fc;
+        }
+        /* Hero Section Styles */
+        .hero {
+            background-color: #1e1e1e;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #bb86fc;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #bb86fc;
+            color: #121212;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #a366f0;
+        }
+        /* Features Section Styles */
+        .features {
+            padding: 4rem 0;
+            background-color: #121212;
+        }
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #bb86fc;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .feature {
+            text-align: center;
+            background-color: #1e1e1e;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        .feature h3 {
+            color: #bb86fc;
+        }
+        /* Footer Styles */
+        footer {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">FileShare</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to FileShare</h1>
+            <p>Easy, secure, and fast file sharing for everyone</p>
+            <a href="login.html" class="btn">Get Started</a>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Easy Sharing</h3>
+                    <p>Share files with just a few clicks</p>
+                </div>
+                <div class="feature">
+                    <h3>Secure Storage</h3>
+                    <p>Your files are encrypted and safely stored</p>
+                </div>
+                <div class="feature">
+                    <h3>Fast Transfer</h3>
+                    <p>Lightning-fast file transfers, anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FileShare. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

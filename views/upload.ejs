@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FileShare - Upload File</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      header {
+        background-color: #1e1e1e;
+        padding: 1rem 0;
+        margin-bottom: 2rem;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #bb86fc;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+      .nav-links li {
+        margin-left: 1rem;
+      }
+      .nav-links a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .nav-links a:hover {
+        color: #bb86fc;
+      }
+      h1 {
+        color: #bb86fc;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="file"] {
+        background-color: #2c2c2c;
+        color: #e0e0e0;
+        padding: 0.5rem;
+        border: 1px solid #3c3c3c;
+        border-radius: 5px;
+      }
+      input[type="file"]::-webkit-file-upload-button {
+        background-color: #bb86fc;
+        color: #121212;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      input[type="file"]::-webkit-file-upload-button:hover {
+        background-color: #a366f0;
+      }
+      .btn {
+        display: inline-block;
+        background-color: #bb86fc;
+        color: #121212;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 1rem;
+      }
+      .btn:hover {
+        background-color: #a366f0;
+      }
+      .file-info {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: #2c2c2c;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">FileShare</div>
+          <ul class="nav-links">
+            <li><a href='/dashboard/<%=username%>'>Dashboard</a></li>
+            <li><a href="/upload/<%=username%>">Upload</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Upload File</h1>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Choose a file to upload:</label>
+        <input type="file" id="file" name="file" required />
+        <button type="submit" class="btn">Upload File</button>
+      </form>
+      <div id="fileInfo" class="file-info" style="display: none">
+        <p><strong>File Name:</strong> <span id="fileName"></span></p>
+        <p><strong>File Size:</strong> <span id="fileSize"></span></p>
+        <p><strong>File Type:</strong> <span id="fileType"></span></p>
+      </div>
+    </main>
+
+    <script>
+      document.getElementById("file").addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          document.getElementById("fileName").textContent = file.name;
+          document.getElementById("fileSize").textContent =
+            (file.size / 1024 / 1024).toFixed(2) + " MB";
+          document.getElementById("fileType").textContent =
+            file.type || "Unknown";
+          document.getElementById("fileInfo").style.display = "block";
+        } else {
+          document.getElementById("fileInfo").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
